@@ -2,7 +2,7 @@
 A small Python program to trains a probabilistic context free grammar using a small subset of parse trees from the Penn Treebank, and a CYK parser that uses that PCFG.
 
 ## How to run
-First preprocess the tree bank to replace single occurence terminals with "<unk>"
+First preprocess the tree bank to replace single occurence terminals with "\<unk\>"
 ```
 cat train.trees | python replace_onecounts.py > train.trees.unk 2> train.dict
 ```
