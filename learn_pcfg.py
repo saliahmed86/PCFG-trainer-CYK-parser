@@ -16,19 +16,19 @@ freqs = defaultdict(int)
 condCounts = defaultdict(int)
 
 for line in sys.stdin:
-	line = line.strip()
+    line = line.strip()
 
-	t = Tree.parse(line)
-	#t.binarize()
+    t = Tree.parse(line)
+    #t.binarize()
 
-	#print t.getProductions()
-	prods = t.getProductions()
+    #print t.getProductions()
+    prods = t.getProductions()
 
-	for (x,y) in prods:
-		freqs[(x,y)] += 1
-		condCounts[x] += 1
+    for (x,y) in prods:
+        freqs[(x,y)] += 1
+        condCounts[x] += 1
 
 for (x,y), freq in freqs.iteritems():
-	p = freq / condCounts[x]
-	print "%s -> %s # %.4f" % (x,y,p)
+    p = freq / condCounts[x]
+    print "%s -> %s # %.4f" % (x,y,p)
 
